@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+        }
+
+        img {
+
+            margin: 10px;
+        }
+
+        .center-image img{
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .button-holder{
+            display: flex;
+            margin: 10px ;
+            justify-content: center;
+        }
+        .yes-button button{
+            background-color: pink;
+            border-color: pink;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .no-button button{
+            background-color: grey;
+            border-color:grey;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .text-header {
+            font-size: 16px;
+            font-family: "Brush Script", cursive;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-image">
+        <img src="https://cdn.fbsbx.com/v/t59.2708-21/477624612_545474605173517_3695538321113842987_n.gif?_nc_cat=110&ccb=1-7&_nc_sid=cf94fc&_nc_eui2=AeGSoJsvq8rf4TY0ejX3O9o9K6G9Cjs0tBIrob0KOzS0Ehd-Ws547lgW1g2AnObBonjfIPPhuTg9Buf5m20ogQdr&_nc_ohc=BOyhfIUuKzUQ7kNvgG-VqDn&_nc_oc=Adg1QJV9gl0sD0sICGbNIPfnuBTUPwTng6t7kirEHlTMivRZRD9zXJNezXyNcAa3D9AfRHPIGMNNnPCUUUe1pRsZ&_nc_zt=7&_nc_ht=cdn.fbsbx.com&_nc_gid=AMd3HsHn4M0sIs74TI2Ss2I&oh=03_Q7cD1gGLYZKDUStlGG4f8pHb8BKVtrvxI7HGfRBgFNaMNShWHQ&oe=67AFFC7F" alt="Valentines Gif"/>
+    </div>
+
+    <div class="text-header">
+        <h1>Will You Be My Valentines?</h1>
+    </div>
+
+    <div class="button-holder">
+        <div class="yes-button">
+            <button>YES!</button>
+        </div>
+
+        <div class="no-button" id="growButton">
+            <button>NO!</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#growButton button").addEventListener("click", function() {
+            let yesButton = document.querySelector(".yes-button button"); 
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            
+            yesButton.style.fontSize = (currentSize + 12) + "px";
+            yesButton.style.padding = (currentSize / 2 + 12) + "px " + (currentSize + 10) + "px";
+        });
+    
+        document.querySelector(".yes-button button").addEventListener("click", function() {
+            window.location.href = "page2.html";
+        });
+    </script>
+    
+
+    </body>
+</html>
